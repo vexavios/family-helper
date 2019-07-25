@@ -12,7 +12,7 @@ client.on("guildMemberAdd", member => {
     let count_channel = saccharine.channels.find(c => c.id === "595309464605819033");
     let new_count = saccharine.members.filter(m => !m.user.bot).size;
 
-    count_channel.edit({ name: `・family members: ${new_count}!` }).catch(console.error);
+    count_channel.edit({ name: `・${new_count} friends!` }).catch(console.error);
 });
 
 client.on("guildMemberRemove", member => {
@@ -20,5 +20,5 @@ client.on("guildMemberRemove", member => {
     let count_channel = saccharine.channels.find(c => c.id === "595309464605819033");
     let new_count = saccharine.members.filter(m => !m.user.bot).size;
 
-    count_channel.edit({ name: `・family members: ${new_count}!` }).catch(console.error);
+    count_channel.edit({ name: `・${new_count} friends!` }).catch(console.error);
 });
