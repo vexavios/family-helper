@@ -5,7 +5,6 @@ client.login();
 
 client.on("ready", () => {
     console.log("family counter is now online!");
-    client.user.setStatus("dnd").catch(console.error);
     client.user.setActivity("for user changes...", { type: "WATCHING" }).catch(console.error);
 });
 
