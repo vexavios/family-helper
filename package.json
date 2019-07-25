@@ -5,8 +5,5 @@
   "main": "familycounter.js",
   "scripts": {
     "start": "node familycounter.js"
-  },
-   "dependencies": {
-    "discord.js": "11.5.1"
   }
 }
