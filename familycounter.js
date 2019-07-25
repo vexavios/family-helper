@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.login(process.env.CLIENT_TOKEN);
+client.login();
 
 client.on("ready", () => {
     console.log("family counter is now online!");
