@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.login(process.env.CLIENT_TOKEN);
 
-client.on("ready" () => {
+client.on("ready", () => {
     console.log("family counter is now online!");
 });
 
