@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.login("NjAzNzkwMDY1Mjg1NDY0MDk0.XTkl2A.01XEzTbAnEonKf7j2z3qT8lw2VU");
+client.login();
 
 client.on("guildMemberAdd", member => {
     let saccharine = client.guilds.find(g => g.id === "538114152716173312");
