@@ -1,10 +1,9 @@
 {
   "name": "family counter",
+  "description": "a bot used to keep track of the member count voice channel on the saccharine discord server.",
+  "version": "0.0.0",
   "main": "familycounter.js",
   "scripts": {
     "start": "node familycounter.js"
-  },
-  "dependencies": {
-    "discord.js": "11.5.1"
   }
 }
