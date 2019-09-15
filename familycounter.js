@@ -9,17 +9,17 @@ client.on("ready", () => {
 });
 
 client.on("guildMemberAdd", member => {
-    let saccharine = client.guilds.find(g => g.id === "538114152716173312");
-    let count_channel = saccharine.channels.find(c => c.id === "595309464605819033");
-    let new_count = saccharine.members.filter(m => !m.user.bot).size;
+    let server = client.guilds.find(g => g.id === "622821305133039616");
+    let count_channel = server.channels.find(c => c.id === "622863885401063426");
+    let new_count = server.members.filter(m => !m.user.bot).size;
 
     count_channel.edit({ name: `┊❝ ${new_count} friends! ❞` }).catch(console.error);
 });
 
 client.on("guildMemberRemove", member => {
-    let saccharine = client.guilds.find(g => g.id === "538114152716173312");
-    let count_channel = saccharine.channels.find(c => c.id === "595309464605819033");
-    let new_count = saccharine.members.filter(m => !m.user.bot).size;
+    let server = client.guilds.find(g => g.id === "622821305133039616");
+    let count_channel = server.channels.find(c => c.id === "622863885401063426");
+    let new_count = server.members.filter(m => !m.user.bot).size;
 
     count_channel.edit({ name: `┊❝ ${new_count} friends! ❞` }).catch(console.error);
 });
