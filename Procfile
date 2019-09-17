@@ -1,1 +1,1 @@
-worker: node familycounter.js
+worker: node familyhelper.js
