@@ -1,2 +1,2 @@
-# family-counter
-a bot used to keep track of the member count voice channel on the saccharine discord server.
+# family-helper
+a bot used to assist in various tasks on the estella discord server.
