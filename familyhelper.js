@@ -10,6 +10,8 @@ client.on("ready", () => {
 
 // suggestions channel clearer
 client.on("message", message => {
+    if (message.author.bot) return;
+    
     let server = client.guilds.find(g => g.id === "622821305133039616");
     let sugg_channel = server.channels.find(c => c.id === "622842780074377241");
     
