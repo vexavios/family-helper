@@ -15,7 +15,8 @@ client.on("message", message => {
     let server = client.guilds.find(g => g.id === "622821305133039616");
     let sugg_channel = server.channels.find(c => c.id === "622842780074377241");
     
-    if (message.guild !== server && message.channel !== sugg_channel) return;
+    if (message.guild !== server) return;
+    if (message.channel !== sugg_channel) return;
     if (message.content.trim().toLowerCase().startsWith("s!suggest")) return;
     
     message.delete()
