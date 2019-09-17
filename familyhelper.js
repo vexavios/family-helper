@@ -19,7 +19,8 @@ client.on("message", message => {
     if (message.content.trim().toLowerCase().startsWith("s!suggest")) return;
     
     message.delete()
-        .then(msg => message.channel.send(message.author + "\n**꒰<a:eMessageHeart:623058074524975114>꒱ please suggest using the following format:**\n\n`s!suggest [suggestion]`").delete(5000))
+        .then(msg => message.channel.send(message.author + "\n**꒰<a:eMessageHeart:623058074524975114>꒱ please suggest using the following format:**\n\n`s!suggest [suggestion]`")
+              .then(m => m.delete(5000)).catch(console.error))
         .catch(console.error);
 });
 
