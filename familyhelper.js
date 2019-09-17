@@ -7,7 +7,7 @@ client.on("ready", () => {
     console.log("family helper is now online!");
     client.user.setActivity("for people to help...", { type: "WATCHING" }).catch(console.error);
 });
-
+ 
 // suggestions channel clearer
 client.on("message", message => {
     let server = client.guilds.find(g => g.id === "622821305133039616");
