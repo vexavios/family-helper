@@ -37,7 +37,7 @@ client.on("message", message => {
         let messageUser;
         let sendMessage;
 
-        return message.channel.send("`" + message.guild.members.find(u => u === args.split(" ")[0].trim()).id + "` | `");
+        return message.channel.send("`" + message.guild.members.find(u => u.toString() === args.split(" ")[0].trim()).id + "` | `");
 
         // determine if user is either ID or mention, and save it based on that, and save all command arguments
         if (message.mentions.members.first() && message.guild.members.find(u => u === args.split(" ")[0].trim()).id === message.mentions.members.first().id && args.split(" ").slice(1).join(" ").trim() || !isNaN(parseInt(args.split(" ")[0])) && args.split(" ").slice(1).join(" ").trim()) {
