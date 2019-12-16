@@ -63,7 +63,7 @@ client.on("message", message => {
 
             if (!messageUser) return message.channel.send("The user ID you entered is invalid!");
 
-            messageUser.send({ embed: {
+            messageUser[0].send({ embed: {
                 title: "Estella Secret Santa",
                 color: 16757940,
                 description: sendMessage,
