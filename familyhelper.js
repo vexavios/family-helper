@@ -39,12 +39,12 @@ client.on("message", message => {
 
         // determine if user is either ID or mention, and save it based on that, and save all command arguments
         if (message.mentions.members.first() && args.split(" ")[0].trim() === message.mentions.members.first().toString() && args.split(" ").slice(1).join(" ").trim() || !isNaN(parseInt(args.split(" ")[0])) && args.split(" ").slice(1).join(" ").trim()) {
-            if (args.split(" ")[0].trim() === message.mentions.members.first().toString()) messageUser = message.mentions.members.first();
+            if (message.mentions.members.first() && args.split(" ")[0].trim() === message.mentions.members.first().toString()) messageUser = message.mentions.members.first();
             else messageUser = args.split(" ")[0].trim();
 
             sendMessage = args.split(" ").slice(1).join(" ").trim();
         } else {
-            return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [User mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
+            return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
         }
 
         if (message.mentions.members.first() && args.split(" ")[0].trim() === message.mentions.members.first().toString()) {
