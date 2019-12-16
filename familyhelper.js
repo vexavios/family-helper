@@ -67,9 +67,12 @@ client.on("message", message => {
                 title: "Estella Secret Santa",
                 color: 16757940,
                 description: sendMessage,
-                footer: "Sent to you from anonymous"
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "Sent to you from anonymous"
+                } 
               }}).then(msg => {
-                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.tag}**!`);
+                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`);
               }).catch(err => {
                   message.channel.send(message.author + "\n**The following error occurred while trying to send your message to your specified user for the Estella Secret Santa:**```" + err + "```");
               });
