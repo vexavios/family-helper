@@ -56,7 +56,7 @@ client.on("message", message => {
               }}).then(msg => {
                   message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.tag}**!`);
               }).catch(err => {
-                  message.channel.send(message.author + "\n**The following error occurred while trying to send your message to your specified user for the Estella Secret Santa:**```" + err + "```");
+                  message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.tag + "**:```" + err + "```");
               });
         } else if (!isNaN(parseInt(args.split(" ")[0]))) {
             messageUser = message.guild.members.find(u => u.id === messageUser);
@@ -74,7 +74,7 @@ client.on("message", message => {
               }}).then(msg => {
                   message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`);
               }).catch(err => {
-                  message.channel.send(message.author + "\n**The following error occurred while trying to send your message to your specified user for the Estella Secret Santa:**```" + err + "```");
+                  message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
         }
     }
