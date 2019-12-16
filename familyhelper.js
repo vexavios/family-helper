@@ -59,11 +59,11 @@ client.on("message", message => {
                   message.channel.send(message.author + "\n**The following error occurred while trying to send your message to your specified user for the Estella Secret Santa:**```" + err + "```");
               });
         } else if (!isNaN(parseInt(args.split(" ")[0]))) {
-            messageUser = message.guild.members.filter(u => u.id === messageUser);
+            messageUser = message.guild.members.find(u => u.id === messageUser);
 
             if (!messageUser) return message.channel.send("The user ID you entered is invalid!");
 
-            messageUser[0].send({ embed: {
+            messageUser.send({ embed: {
                 title: "Estella Secret Santa",
                 color: 16757940,
                 description: sendMessage,
