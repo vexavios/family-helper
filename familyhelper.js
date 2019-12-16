@@ -37,6 +37,8 @@ client.on("message", message => {
         let messageUser;
         let sendMessage;
 
+        return message.channel.send("`" + message.guild.members.find(u => u === args.split(" ")[0].trim()).id + "` | `");
+
         // determine if user is either ID or mention, and save it based on that, and save all command arguments
         if (message.mentions.members.first() && message.guild.members.find(u => u === args.split(" ")[0].trim()).id === message.mentions.members.first().id && args.split(" ").slice(1).join(" ").trim() || !isNaN(parseInt(args.split(" ")[0])) && args.split(" ").slice(1).join(" ").trim()) {
             if (message.mentions.members.first() && message.guild.members.find(u => u === args.split(" ")[0].trim()).id === message.mentions.members.first().id) messageUser = message.mentions.members.first();
@@ -44,7 +46,6 @@ client.on("message", message => {
 
             sendMessage = args.split(" ").slice(1).join(" ").trim();
         } else {
-            return message.channel.send("`" + message.guild.members.find(u => u === args.split(" ")[0].trim()).id + "` | `" + message.mentions.members.first().id + "`");
             return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
         }
 
