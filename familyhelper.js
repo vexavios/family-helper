@@ -44,7 +44,7 @@ client.on("message", message => {
 
             sendMessage = args.split(" ").slice(1).join(" ").trim();
         } else {
-            return message.channel.send("`" + message.guild.members.find(u => u === args.split(" ")[0].trim()).id "` | `" + message.mentions.members.first().id + "`");
+            return message.channel.send("`" + message.guild.members.find(u => u === args.split(" ")[0].trim()).id + "` | `" + message.mentions.members.first().id + "`");
             return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
         }
 
