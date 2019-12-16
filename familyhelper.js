@@ -47,6 +47,8 @@ client.on("message", message => {
             return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
         }
 
+        return message.channel.send(args.split(" ")[0].trim() + " | " + message.mentions.members.first().toString());
+
         if (message.mentions.members.first() && args.split(" ")[0].trim() === message.mentions.members.first().toString()) {
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
