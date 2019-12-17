@@ -48,6 +48,8 @@ client.on("message", message => {
         }
 
         if (message.mentions.members.first() && args.split(" ")[0].trim().substring(3, args.split(" ")[0].trim().length - 1) === message.mentions.members.first().toString().substring(2, message.mentions.members.first().toString().length - 1)) {
+            if (messageUser.user.bot) return message.channel.send("Please choose an Estella member that is not a bot!");
+
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
                 color: 16757940,
@@ -65,6 +67,7 @@ client.on("message", message => {
             messageUser = message.guild.members.find(u => u.id === messageUser);
 
             if (!messageUser) return message.channel.send("The Estella member ID you entered is invalid!");
+            if (messageUser.user.bot) return message.channel.send("Please choose an Estella member that is not a bot!");
 
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
