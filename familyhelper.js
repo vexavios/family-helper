@@ -48,7 +48,9 @@ client.on("message", message => {
         }
 
         if (message.mentions.members.first() && args.split(" ")[0].trim().substring(3, args.split(" ")[0].trim().length - 1) === message.mentions.members.first().toString().substring(2, message.mentions.members.first().toString().length - 1)) {
+            // member mention checks
             if (messageUser.user.bot) return message.channel.send("Please choose an Estella member that is not a bot!");
+            if (messageUser.user === message.author) return message.channel.send("Please choose an Estella member other than yourself!");
 
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
@@ -64,10 +66,13 @@ client.on("message", message => {
                   message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
         } else if (!isNaN(parseInt(args.split(" ")[0]))) {
+            // find member with supplied id
             messageUser = message.guild.members.find(u => u.id === messageUser);
 
+            // member id checks
             if (!messageUser) return message.channel.send("The Estella member ID you entered is invalid!");
             if (messageUser.user.bot) return message.channel.send("Please choose an Estella member that is not a bot!");
+            if (messageUser.user === message.author) return message.channel.send("Please choose an Estella member other than yourself!");
 
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
