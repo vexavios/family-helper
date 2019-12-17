@@ -32,7 +32,8 @@ client.on("message", message => {
               .then(m => m.delete(5000)).catch(console.error))
         .catch(console.error);
     } else if (command === "send") {
-        if (message.guild && message.guild.id !== "622821305133039616") return;
+        if (!message.guild) return;
+        if (message.guild.id !== "622821305133039616") return;
         if (!args) return message.channel.send("Please include an Estella member to DM, as well as a message to send to them!");
 
         let messageUser;
