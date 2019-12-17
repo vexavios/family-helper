@@ -32,7 +32,7 @@ client.on("message", message => {
               .then(m => m.delete(5000)).catch(console.error))
         .catch(console.error);
     } else if (command === "send") {
-        if (!args) return message.channel.send("Please include a user to DM, as well as a message to send to them!");
+        if (!args) return message.channel.send("Please include an Estella member to DM, as well as a message to send to them!");
 
         let messageUser;
         let sendMessage;
@@ -44,7 +44,7 @@ client.on("message", message => {
 
             sendMessage = args.split(" ").slice(1).join(" ").trim();
         } else {
-            return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
+            return message.channel.send(message.author + "\n**Usage:**```" + prefix + "send [Estella member mention or ID of user who you want to send the message to via DMs] [The message content that you want to DM to the user]```");
         }
 
         if (message.mentions.members.first() && args.split(" ")[0].trim().substring(3, args.split(" ")[0].trim().length - 1) === message.mentions.members.first().toString().substring(2, message.mentions.members.first().toString().length - 1)) {
@@ -64,7 +64,7 @@ client.on("message", message => {
         } else if (!isNaN(parseInt(args.split(" ")[0]))) {
             messageUser = message.guild.members.find(u => u.id === messageUser);
 
-            if (!messageUser) return message.channel.send("The user ID you entered is invalid!");
+            if (!messageUser) return message.channel.send("The Estella member ID you entered is invalid!");
 
             messageUser.send({ embed: {
                 title: "Estella Secret Santa",
