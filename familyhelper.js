@@ -63,7 +63,7 @@ client.on("message", message => {
                     text: "Sent to you from anonymous"
                 } 
               }}).then(msg => {
-                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`).then(m => m.delete(5000));
+                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`).then(m => m.delete(5000)).catch(err => console.log(err));
               }).catch(err => {
                   message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
@@ -85,7 +85,7 @@ client.on("message", message => {
                     text: "Sent to you from anonymous"
                 } 
               }}).then(msg => {
-                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`).then(m => m.delete(5000));
+                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`).then(m => m.delete(5000)).catch(err => console.log(err));
               }).catch(err => {
                   message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
