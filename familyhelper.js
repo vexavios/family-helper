@@ -52,7 +52,10 @@ client.on("message", message => {
                 title: "Estella Secret Santa",
                 color: 16757940,
                 description: sendMessage,
-                footer: "Sent to you from anonymous"
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "Sent to you from anonymous"
+                } 
               }}).then(msg => {
                   message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`);
               }).catch(err => {
