@@ -54,9 +54,9 @@ client.on("message", message => {
                 description: sendMessage,
                 footer: "Sent to you from anonymous"
               }}).then(msg => {
-                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.tag}**!`);
+                  message.channel.send(message.author + `\nYour message was successfully sent to **${messageUser.user.tag}**!`);
               }).catch(err => {
-                  message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.tag + "**:```" + err + "```");
+                  message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
         } else if (!isNaN(parseInt(args.split(" ")[0]))) {
             messageUser = message.guild.members.find(u => u.id === messageUser);
