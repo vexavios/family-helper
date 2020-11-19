@@ -90,7 +90,7 @@ client.on("message", message => {
                   message.channel.send(message.author + "\nThe following error occurred while trying to send your message to **" + messageUser.user.tag + "**:```" + err + "```");
               });
         }
-    }
+    } 
 });
 
 
