@@ -8,7 +8,7 @@ client.on("ready", () => {
     client.user.setActivity("for people to help...", { type: "WATCHING" }).catch(console.error);
 });
 
-// suggestions channel clearer
+// suggestions channel clearer 
 client.on("message", message => {
     if (message.author.bot) return;
 
